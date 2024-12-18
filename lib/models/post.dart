@@ -7,7 +7,8 @@ class Post {
   Post? embededPost;
   List<Post> comments;
   List<User> likes;
-  
+  String? location;
+  String? weather;
 
   Post({
     required this.owner,
@@ -16,5 +17,7 @@ class Post {
     this.embededPost,
     this.comments = const [],
     this.likes = const [],
+    this.location,
+    this.weather,
   });
 }

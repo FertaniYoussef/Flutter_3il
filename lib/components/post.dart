@@ -78,6 +78,17 @@ class Post extends StatelessWidget {
                 ),
               ),
             ),
+          if (post.location != null && post.weather != null) ...[
+            const SizedBox(height: 10),
+            Text(
+              'Location: ${post.location}',
+              style: const TextStyle(fontSize: 14, color: Colors.grey),
+            ),
+            Text(
+              'Weather: ${post.weather}',
+              style: const TextStyle(fontSize: 14, color: Colors.grey),
+            ),
+          ],
           if (updatedPost.embededPost != null)
             Padding(
               padding: const EdgeInsets.only(top: 10),
@@ -125,7 +136,7 @@ class Post extends StatelessWidget {
 
   void onLike(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
-    final postProvider = Provider.of<PostProvider>(context, listen: true);
+    final postProvider = Provider.of<PostProvider>(context, listen: false);
     if (userProvider.currentUser != null) {
       postProvider.likePost(post, userProvider.currentUser!);
     }

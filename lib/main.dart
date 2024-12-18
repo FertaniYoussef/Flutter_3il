@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('My Social Network'),
         ),
-        body: const HomePage(), // No need to pass posts
+        body: HomePage(), // No need to pass posts
       ),
     );
   }
